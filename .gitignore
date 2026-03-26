@@ -16,6 +16,7 @@ node_modules/
 
 # Module Federation generated types
 **/@mf-types/
+**/.mf/
 **/dist-types/
 
 # Logs
