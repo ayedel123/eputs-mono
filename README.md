@@ -6,10 +6,16 @@ node 22.18.0
 
 run `yarn install`
 
-run root-app
+## root-app
+
+Работает на порту 3000 (порт должен быть свободный)
+
 `yarn workspace root-app start`
 
-run cool-module
+## cool-module
+
+Работает на порту 3001 (порт должен быть свободный)
+
 `yarn workspace cool-module start`
 
 ## Фичи
