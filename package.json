@@ -1,0 +1,20 @@
+{
+    "name": "eputs-mono",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "shared"
+    ],
+    "devDependencies": {
+        "@module-federation/typescript": "^3.1.6",
+        "@types/node": "^25.5.0",
+        "@types/webpack": "^5.28.5",
+        "typescript": "6.0.2",
+        "webpack": "^5.105.4",
+        "webpack-cli": "^7.0.2",
+        "webpack-dev-server": "^5.2.3"
+    },
+    "dependencies": {
+        "@module-federation/enhanced": "^2.2.3"
+    }
+}
