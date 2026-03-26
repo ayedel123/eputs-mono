@@ -1,5 +1,5 @@
 {
-    "extends": "../../shared/src/webpack/tsconfig.federation.json",
+    "extends": "../../packages/eputs_configs/src/webpack/tsconfig.federation.json",
     "compilerOptions": {
         "rootDir": "./src"
     },

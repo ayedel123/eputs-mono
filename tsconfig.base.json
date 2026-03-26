@@ -12,7 +12,8 @@
         "types": ["node", "webpack", "webpack-dev-server"],
         "baseUrl": ".",
         "paths": {
-            "@eputs/shared-configs": ["shared/index.ts"]
+            "@eputs/configs": ["packages/eputs_configs/index.ts"],
+            "@eputs/context": ["packages/eputs_context/index.ts"]
         }
     }
 }

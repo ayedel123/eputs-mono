@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 
 import type RemoteButtonType from "../@mf-types/cool_module/Button";
 import type Module2Type from "../@mf-types/module2/Module2";
+import { SharedContextProvider, useCounter } from "@eputs/context";
 
 const RemoteButton = lazy(
     () =>
@@ -18,15 +19,25 @@ const Module2 = lazy(
         }>,
 );
 
+const CounterContent = () => {
+    const context = useCounter();
+
+    return (
+        <h1>
+            {`RootApp контекст ${context.count}`}
+            <Suspense fallback={<div>Loading button...</div>}>
+                <RemoteButton context={context} />
+                <Module2 context={context} />
+            </Suspense>
+        </h1>
+    );
+};
+
 const App = () => {
     return (
-        <Suspense fallback={<div>Loading button...</div>}>
-            <h1>
-                Hello, React + TypeScript + Webpack!
-                <RemoteButton />
-                <Module2 />
-            </h1>
-        </Suspense>
+        <SharedContextProvider>
+            <CounterContent />
+        </SharedContextProvider>
     );
 };
 

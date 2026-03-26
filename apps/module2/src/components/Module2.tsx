@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { SharedContextType } from "@eputs/context";
 
-const Module2 = () => {
-    const [usersCount, setUsersCount] = useState(0);
+const Module2 = (props: { context: SharedContextType }) => {
+    const { count, decrement } = props.context;
 
     const handleClick = () => {
-        if (usersCount === 0) {
-            setUsersCount(1);
-        }
+        decrement();
     };
 
     return (
         <div>
             ЕПУТС модуль 2
-            <button onClick={handleClick}>
-                Количество пользователей модуля ЕПУТС2: {usersCount}
-            </button>
+            <button onClick={handleClick}>уменьшить пользователей епутс</button>
         </div>
     );
 };

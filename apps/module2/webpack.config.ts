@@ -1,9 +1,9 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import type { Configuration } from "webpack";
-import { getLoaders } from "@eputs/shared-configs";
-import { getPlugins } from "@eputs/shared-configs";
-import { getRemoteFederationConfig } from "@eputs/shared-configs";
+import { getLoaders } from "@eputs/configs";
+import { getPlugins } from "@eputs/configs";
+import { getRemoteFederationConfig } from "@eputs/configs";
 
 import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
 

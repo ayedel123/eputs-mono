@@ -2,7 +2,7 @@ import {
     getHostFederationConfig,
     getLoaders,
     getPlugins,
-} from "@eputs/shared-configs";
+} from "@eputs/configs";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { Configuration } from "webpack";

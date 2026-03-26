@@ -3,7 +3,7 @@
     "private": true,
     "workspaces": [
         "apps/*",
-        "shared"
+        "packages/*"
     ],
     "devDependencies": {
         "@module-federation/typescript": "^3.1.6",

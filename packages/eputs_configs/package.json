@@ -1,5 +1,5 @@
 {
-    "name": "@eputs/shared-configs",
+    "name": "@eputs/configs",
     "version": "1.0.0",
     "private": true,
     "type": "module",
@@ -9,8 +9,6 @@
         ".": "./src/index.ts"
     },
     "peerDependencies": {
-        "webpack": "^5.0.0",
-        "html-webpack-plugin": "^5.0.0",
-        "clean-webpack-plugin": "^4.0.0"
+        "webpack": "^5.0.0"
     }
 }

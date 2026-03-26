@@ -12,7 +12,7 @@
         "@babel/preset-env": "^7.29.2",
         "@babel/preset-react": "^7.28.5",
         "@babel/preset-typescript": "^7.28.5",
-        "@eputs/shared-configs": "*",
+        "@eputs/configs": "*",
         "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
         "@types/webpack": "^5.28.5",
