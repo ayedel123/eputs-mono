@@ -8,11 +8,12 @@ const Button = (props: { context: SharedContextType }) => {
     };
 
     return (
-        <>
+        <div>
+            ЕПУТС модуль 1
             <button onClick={handleClick}>
                 Увеличить пользователей епутс: {count}
             </button>
-        </>
+        </div>
     );
 };
 

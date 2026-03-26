@@ -10,7 +10,7 @@ const Module2 = (props: { context: SharedContextType }) => {
     return (
         <div>
             ЕПУТС модуль 2
-            <button onClick={handleClick}>уменьшить пользователей епутс</button>
+            <button onClick={handleClick}>уменьшить пользователей епутс: {count}</button>
         </div>
     );
 };
