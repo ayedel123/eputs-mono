@@ -1,0 +1,7 @@
+{
+    "extends": "../../shared/src/webpack/tsconfig.federation.json",
+    "compilerOptions": {
+        "rootDir": "./src"
+    },
+    "include": ["src/**/*"]
+}

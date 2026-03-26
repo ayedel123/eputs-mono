@@ -26,6 +26,7 @@ export function getRemoteFederationConfig(
         exposes: { ...exposes },
         dts: {
             tsConfigPath: "./tsconfig.federation.json",
+            generateTypes: true,
         },
         manifest: false,
         shared: SHARED,

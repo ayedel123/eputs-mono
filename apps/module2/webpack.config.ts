@@ -1,19 +1,16 @@
-import {
-    getHostFederationConfig,
-    getLoaders,
-    getPlugins,
-} from "@eputs/shared-configs";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { Configuration } from "webpack";
+import { getLoaders } from "@eputs/shared-configs";
+import { getPlugins } from "@eputs/shared-configs";
+import { getRemoteFederationConfig } from "@eputs/shared-configs";
+
 import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const hostFederation = getHostFederationConfig("root-app", {
-    "cool_module": `cool_module@${"http://localhost:3001"}/remoteEntry.js`,
-    "module2": `module2@${"http://localhost:3002"}/remoteEntry.js`,
+const federationConfig = getRemoteFederationConfig("module2", {
+    "./Module2": "./src/components/Module2",
 });
 
 const config: Configuration = {
@@ -21,7 +18,7 @@ const config: Configuration = {
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: "/",
+        publicPath: "auto",
         clean: true,
     },
     resolve: {
@@ -33,13 +30,13 @@ const config: Configuration = {
     },
     plugins: [
         ...getPlugins(__dirname),
-        new ModuleFederationPlugin(hostFederation),
+        new ModuleFederationPlugin(federationConfig),
     ],
     devServer: {
         static: path.join(__dirname, "dist"),
         hot: true,
         historyApiFallback: true,
-        port: 3000,
+        port: 3002,
         open: true,
     },
     mode: "development",

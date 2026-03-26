@@ -3,7 +3,8 @@
     "compilerOptions": {
         "outDir": "./dist",
         "paths": {
-            "*": ["./@mf-types/*"]
+            "*": ["./@mf-types/*"],
+            "cool_module/*": ["./@mf-types/cool_module/*", "./src/types/*"]
         }
     },
     "include": ["src", "webpack.config.ts", "@mf-types"]
