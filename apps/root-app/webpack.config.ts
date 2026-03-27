@@ -7,13 +7,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 import type { Configuration } from "webpack";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
+import { TanStackRouterWebpack } from "@tanstack/router-plugin/webpack";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const hostFederation = getHostFederationConfig("root-app", {
-    "cool_module": `cool_module@${"http://localhost:3001"}/remoteEntry.js`,
-    "module2": `module2@${"http://localhost:3002"}/remoteEntry.js`,
+    cool_module: `cool_module@${"http://localhost:3001"}/remoteEntry.js`,
+    module2: `module2@${"http://localhost:3002"}/remoteEntry.js`,
 });
 
 const config: Configuration = {
@@ -34,6 +35,10 @@ const config: Configuration = {
     plugins: [
         ...getPlugins(__dirname),
         new ModuleFederationPlugin(hostFederation),
+        TanStackRouterWebpack({
+            routesDirectory: "./src/routes",
+            generatedRouteTree: "./src/routeTree.gen.ts",
+        }),
     ],
     devServer: {
         static: path.join(__dirname, "dist"),

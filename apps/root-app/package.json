@@ -30,6 +30,7 @@
         "webpack-dev-server": "^5.2.3"
     },
     "devDependencies": {
+        "@tanstack/router-plugin": "^1.167.5",
         "@types/node": "^25.5.0",
         "typescript": "^6.0.2"
     }
